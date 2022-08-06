@@ -1,0 +1,1193 @@
+     <!DOCTYPE HTML><html lang='es'>
+<!-- Mirrored from devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Aug 2022 11:44:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><title>Experimento con Three.js 'EspectroAudible'</title><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><meta name='viewport' content='width=device-width, initial scale=1.0' /><meta name='author' content='Josep Antoni Bover' /><meta name='twitter:card' content='summary' /><meta name='twitter:site' content='@publisher_handle' /><meta name='twitter:title' content="Experimento con Three.js 'EspectroAudible'" /><meta name='twitter:creator' content='@author_handle' /><meta name='twitter:image' content='https://devildrey33.es/Web/Graficos/250x200_EspectroAudible.png' /><meta property='og:title' content="Experimento con Three.js 'EspectroAudible'" /><meta property='og:type' content='article' /><meta property='og:url' content='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible.html' /><meta property='og:image' content='https://devildrey33.es/Web/Graficos/250x200_EspectroAudible.png' /><meta property='og:site_name' content='devildrey33' /><meta name="msapplication-config" content="none"/><link rel='shortcut icon' href='https://devildrey33.es/Web/Graficos/devildrey33.ico' /><link rel='stylesheet' href='https://devildrey33.es/Web/Cache/devildrey33.min.css' /><script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script><script src='https://devildrey33.es/Web/JS/3rdParty/codemirror.min.js'></script><script src='https://devildrey33.es/Web/JS/3rdParty/three-r130.min.js'></script><script src='https://devildrey33.es/Web/Cache/EntradasBlog.js'></script><script src='https://devildrey33.es/Web/Cache/devildrey33.min.js'></script><script>$Base.Raiz = 'https://devildrey33.es/'; $Base.RaizRelativa = ''; $Base.Debug(false);</script></head><body mousehover=true><div style='font-family:Nova Mono; position:fixed; top:-100px'>NovaMonoFix</div><div id='ErroresPHP' mostrar='false'><div id='ErroresPHP_Titulo'>Errores PHP</div><div id='ErroresPHP_Cerrar'>X</div><div id='ErroresPHP_Info'></div></div><div id='VentanaLogin' class='MarcoVentana-250'><table><tr><td>Usuario</td><td><input name='Usuario' type='text' id='devildrey33_Usuario' spellcheck='false' /></td></tr><tr><td>Password</td><td><input name='Password' type='text' id='devildrey33_Password' /></td></tr></table></div><nav id='BarraPrincipal' class='SinSeleccion'><input id='BarraPrincipal_Boton_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraPrincipal_Boton_Estado' tooltip-es='Menú principal' tooltip-en='Main menu' tooltip-pos='L'></label><div class='Menu_Boton'><div id='BarraPrincipal_Boton_Burguer'></div></div><div id='BarraPrincipal_Submenus'><div id='BarraPrincipal_Fondo'></div><div class='Menu'><input id='BarraPrincipal_BotonCSS_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraPrincipal_BotonCSS_Estado' tooltip-es='CSS' tooltip-en='CSS' tooltip-pos='L'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-css' /></span></div><div class='Menu_Marco' id='BarraPrincipal_MarcoCSS'><a href='https://devildrey33.es/Doc/CSS/Colores'>Colores</a><a href='https://devildrey33.es/Doc/CSS/Degradados'>Degradados</a><a href='https://devildrey33.es/Doc/CSS/Unidades'>Unidades</a><a href='https://devildrey33.es/Doc/CSS/Funciones'>Funciones</a><a href='https://devildrey33.es/Doc/CSS/Reglas'>Reglas</a><a href='https://devildrey33.es/Doc/CSS/Selectores'>Selectores</a><a href='https://devildrey33.es/Doc/CSS/Propiedades'>Propiedades</a><a href='https://devildrey33.es/Doc/CSS/Variables'>Variables</a></div></div><div class='Menu'><input id='BarraPrincipal_BotonCPP_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraPrincipal_BotonCPP_Estado' tooltip-es='C/C++ en Windows' tooltip-en='C/C++ on Windows' tooltip-pos='L'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-cpp' /></span></div><div class='Menu_Marco' id ='BarraPrincipal_MarcoCPP'><a href='https://devildrey33.es/Blog/Tutorial_WINAPI_1_0'>Calculadora</a><a href='https://devildrey33.es/Blog/Tutorial_WINAPI_2_0'>Snake</a><a href='https://devildrey33.es/Blog/Tutorial_WINAPI_3_0'>Instalador</a><a href='https://devildrey33.es/Blog/Tutorial_WINAPI_4'>Archivos DUMP</a><a href='https://devildrey33.es/Blog/BubaTronik'>BubaTronik</a></div></div><div class='Menu'><input id='BarraPrincipal_BotonJS_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraPrincipal_BotonJS_Estado' tooltip-es='JavaScript y jQuery' tooltip-en='JavaScript and jQuery' tooltip-pos='L'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-js' /></span></div><div class='Menu_Marco' id='BarraPrincipal_MarcoJS'><a href='https://devildrey33.es/Blog/Canvas2D_1'>Canvas 2D 1</a><a href='https://devildrey33.es/Blog/Canvas2D_2'>Canvas 2D 2</a><a href='https://devildrey33.es/Blog/Canvas2D_3'>Canvas 2D 3</a><a href='https://devildrey33.es/Blog/Canvas2D_4'>Canvas 2D 4</a><a href='https://devildrey33.es/Lab/Ejemplos/Solitario/Solitario.html'>Solitario HTML5</a><a href='https://devildrey33.es/Lab/Ejemplos/Domino/Domino.html'>Dominó 3D</a><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/AdiestramientoCubos.html'>Adiestrando cubos</a><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/WormHole.html'>WormHole</a><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/Sinusoidal.html'>Sinusoidal</a><a href='https://devildrey33.es/Lab/Ejemplos/CyberParasit/CyberParasit.html'>Cyber Parasit</a><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible.html'>Espectro Audible</a></div></div><div class='Menu'><input id='BarraPrincipal_BotonPHP_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraPrincipal_BotonPHP_Estado' tooltip-es='PHP' tooltip-en='PHP' tooltip-pos='L'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-php' /></span></div><div class='Menu_Marco' id='BarraPrincipal_MarcoPHP'><a href='https://devildrey33.es/Blog/Captcha1'>Captchas 1</a><a href='https://devildrey33.es/Blog/Captcha2'>Captchas 2</a><a href='https://devildrey33.es/Blog/Captcha3'>Captchas 3</a><a href='https://devildrey33.es/Blog/resaltar-sintaxis-codigo-fuente'>Resaltar sintaxis de un código fuente</a></div></div><div class='Menu'><input id='BarraPrincipal_BotonBuscar_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraPrincipal_BotonBuscar_Estado' tooltip-es='Buscar' tooltip-en='Search' tooltip-pos='L'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-buscar' /></span></div><div class='Menu_Marco' id='BarraPrincipal_MarcoBuscar'><input type='text' name='Search' id='BarraPrincipal_MarcoBuscar_Edit' placeholder='Texto a buscar..' required><div id='BarraPrincipal_MarcoBuscar_BotonBuscar'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-buscar' /></div><div id='BarraPrincipal_MarcoBuscar_Resultado'></div></div></div></div><div id='Marco33' class='Menu' mostrar='true'></div></nav><div id='BarraNavegacion_Inferior'><div></div><div></div></div><nav id='BarraNavegacion'><a href='https://devildrey33.es/' id='BarraNavegacion_Cerrar' tooltip-es='Volver al indice principal' tooltip-en='Return to main index' tooltip-pos='R' class='Menu_Boton'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-indice' /></a><div id ='BarraNavegacion_LabVer' class='Menu'  mostrar='true'><input id='BarraNavegacion_BotonVer_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraNavegacion_BotonVer_Estado' tooltip-es='Vista del editor' tooltip-en='Editor's view' tooltip-pos='R'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz' id='BarraNavegacion_Lab_IconoVer'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-modocabecera' /><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-filas' /><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-columnas' /><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-codigo' /><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-preview' /></span></div><div class='Menu_Marco' id ='BarraNavegacion_LabMarcoVer'><input id='Lab_VerModoCabecera_Estado' class='Menu_Boton_Input' type='radio' name='Lab_Ver' /><label tooltip-es='Ver Modo Cabecera' tooltip-en='Rows' tooltip-pos='B' class='Menu_Boton_Label Lab_BotonVerModoCabecera' for='Lab_VerModoCabecera_Estado'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz' id='BarraNavegacion_Lab_IconoVer'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-modocabecera' sinopacidad='true' /></span></div><input id='Lab_VerFilas_Estado' class='Menu_Boton_Input' type='radio' name='Lab_Ver' /><label tooltip-es='Ver Filas' tooltip-en='Rows' tooltip-pos='B' class='Menu_Boton_Label Lab_BotonVerFilas' for='Lab_VerFilas_Estado'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz' id='BarraNavegacion_Lab_IconoVer'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-filas' sinopacidad='true' /></span></div><input id='Lab_VerColumnas_Estado' class='Menu_Boton_Input' type='radio' name='Lab_Ver' /><label tooltip-es='Ver Columnas' tooltip-en='Columns' tooltip-pos='B' class='Menu_Boton_Label Lab_BotonVerColumnas' for='Lab_VerColumnas_Estado'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz' id='BarraNavegacion_Lab_IconoVer'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-columnas' sinopacidad='true' /></span></div><input id='Lab_VerCodigo_Estado' class='Menu_Boton_Input' type='radio' name='Lab_Ver' /><label tooltip-es='Ver Código' tooltip-en='Code' tooltip-pos='B' class='Menu_Boton_Label Lab_BotonVerCodigo' for='Lab_VerCodigo_Estado'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz' id='BarraNavegacion_Lab_IconoVer'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-codigo' sinopacidad='true' /></span></div><input id='Lab_VerPreview_Estado' class='Menu_Boton_Input' type='radio' name='Lab_Ver' /><label tooltip-es='Ver Pre-visualización' tooltip-en='Preview' tooltip-pos='B' class='Menu_Boton_Label Lab_BotonVerPreview' for='Lab_VerPreview_Estado'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz' id='BarraNavegacion_Lab_IconoVer'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-vista-preview' sinopacidad='true' /></span></div></div></div><div id='BarraNavegacion_LabExplorar' class='Menu' mostrar='true'><input id='BarraNavegacion_BotonExplorar_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraNavegacion_BotonExplorar_Estado' tooltip-es='Explorar ejemplos' tooltip-en='Examples explorer' tooltip-pos='R'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-explorar-lab' /></span></div><div class='Menu_Marco' id ='BarraNavegacion_LabMarcoExplorador'><div class='Lab_Explorador SinSeleccion' id='BarraNavegacion_Explorador'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Animation/'><div class='Lab_IcoDirectorioC'></div><span>Animation</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Animation/AnimacionCargando1.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Animation/AnimacionCargando1.html'>AnimacionCargando1.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Animation/AnimacionCargando2.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Animation/AnimacionCargando2.html'>AnimacionCargando2.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Animation/Atomo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Animation/Atomo.html'>Atomo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Animation/CajaAnimada.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Animation/CajaAnimada.html'>CajaAnimada.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Animation/CajaAnimada2.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Animation/CajaAnimada2.html'>CajaAnimada2.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Animation/CajaCayendoScale.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Animation/CajaCayendoScale.html'>CajaCayendoScale.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Animation/Rotacion3D.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Animation/Rotacion3D.html'>Rotacion3D.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Animation/TextSpacing.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Animation/TextSpacing.html'>TextSpacing.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/BannerTest/'><div class='Lab_IcoDirectorioC'></div><span>BannerTest</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/AdiestramientoCubos.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/AdiestramientoCubos.html'>AdiestramientoCubos.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/Anillos.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/Anillos.html'>Anillos.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/CyberParasit.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/CyberParasit.html'>CyberParasit.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/EsferaVShader.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/EsferaVShader.html'>EsferaVShader.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible.html'>EspectroAudible.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible02.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible02.html'>EspectroAudible02.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible08.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible08.html'>EspectroAudible08.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspiralRGB.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/EspiralRGB.html'>EspiralRGB.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/GeometriaBasica.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/GeometriaBasica.html'>GeometriaBasica.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/HexTunnel.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/HexTunnel.html'>HexTunnel.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/MultiCubo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/MultiCubo.html'>MultiCubo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/NuevoCanvas2D.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/NuevoCanvas2D.html'>NuevoCanvas2D.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/NuevoCanvasTHREE.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/NuevoCanvasTHREE.html'>NuevoCanvasTHREE.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/ReunionDeCirculos.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/ReunionDeCirculos.html'>ReunionDeCirculos.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/Sinusoidal.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/Sinusoidal.html'>Sinusoidal.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/TestObjetoAnimacion.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/TestObjetoAnimacion.html'>TestObjetoAnimacion.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BannerTest/WormHole.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BannerTest/WormHole.html'>WormHole.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/BolaExpandible/'><div class='Lab_IcoDirectorioC'></div><span>BolaExpandible</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/BolaExpandible/CSS3_BolaExpandible_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/BolaExpandible/CSS3_BolaExpandible_Ejemplo.html'>CSS3_BolaExpandible_Ejemplo.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Canvas2D/'><div class='Lab_IcoDirectorioC'></div><span>Canvas2D</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Canvas2D/Canvas2D_1_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Canvas2D/Canvas2D_1_Ejemplo.html'>Canvas2D_1_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Canvas2D/Canvas2D_2_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Canvas2D/Canvas2D_2_Ejemplo.html'>Canvas2D_2_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Canvas2D/Canvas2D_3_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Canvas2D/Canvas2D_3_Ejemplo.html'>Canvas2D_3_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Canvas2D/Canvas2D_4_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Canvas2D/Canvas2D_4_Ejemplo.html'>Canvas2D_4_Ejemplo.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Checked/'><div class='Lab_IcoDirectorioC'></div><span>Checked</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Checked/Acordeon.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Checked/Acordeon.html'>Acordeon.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Checked/CheckBox-personalizado.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Checked/CheckBox-personalizado.html'>CheckBox-personalizado.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Checked/CheckBox.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Checked/CheckBox.html'>CheckBox.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Checked/RadioButton-personalizado.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Checked/RadioButton-personalizado.html'>RadioButton-personalizado.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/ChromaticMotionBlur/'><div class='Lab_IcoDirectorioC'></div><span>ChromaticMotionBlur</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/ChromaticMotionBlur/index.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/ChromaticMotionBlur/index.html'>index.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/ChromaticMotionBlur/script.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/ChromaticMotionBlur/script.js'>script.js</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/ChromaticMotionBlur/style.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/ChromaticMotionBlur/style.css'>style.css</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/ContentEditable/'><div class='Lab_IcoDirectorioC'></div><span>ContentEditable</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/ContentEditable/ContentEditable.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/ContentEditable/ContentEditable.html'>ContentEditable.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/CSS/'><div class='Lab_IcoDirectorioC'></div><span>CSS</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/CSS/Degradados/'><div class='Lab_IcoDirectorioC'></div><span>Degradados</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Degradados/DegradadoLinear.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Degradados/DegradadoLinear.html'>DegradadoLinear.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Degradados/DegradadoLinearRepetitivo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Degradados/DegradadoLinearRepetitivo.html'>DegradadoLinearRepetitivo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Degradados/DegradadoRadial.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Degradados/DegradadoRadial.html'>DegradadoRadial.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Degradados/DegradadoRadialRepetitivo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Degradados/DegradadoRadialRepetitivo.html'>DegradadoRadialRepetitivo.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/CSS/Funciones/'><div class='Lab_IcoDirectorioC'></div><span>Funciones</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/attr.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/attr.html'>attr.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/blur.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/blur.html'>blur.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/circle.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/circle.html'>circle.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/ellipse.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/ellipse.html'>ellipse.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/hsl.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/hsl.html'>hsl.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/hsla.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/hsla.html'>hsla.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/inset.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/inset.html'>inset.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/polygon.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/polygon.html'>polygon.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/rgb.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/rgb.html'>rgb.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/rgba.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/rgba.html'>rgba.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/url.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/url.html'>url.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/var.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Funciones/var.html'>var.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/CSS/Propiedades/'><div class='Lab_IcoDirectorioC'></div><span>Propiedades</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-delay.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-delay.html'>animation-delay.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-direction.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-direction.html'>animation-direction.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-duration.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-duration.html'>animation-duration.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-fill-mode.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-fill-mode.html'>animation-fill-mode.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-iteration-count.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-iteration-count.html'>animation-iteration-count.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-name.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-name.html'>animation-name.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-play-state.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-play-state.html'>animation-play-state.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-timing-function.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation-timing-function.html'>animation-timing-function.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/animation.html'>animation.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/backface-visibility.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/backface-visibility.html'>backface-visibility.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-attachment.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-attachment.html'>background-attachment.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-clip.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-clip.html'>background-clip.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-color.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-color.html'>background-color.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-image.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-image.html'>background-image.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-origin.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-origin.html'>background-origin.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-position.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-position.html'>background-position.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-repeat.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-repeat.html'>background-repeat.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-size.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background-size.html'>background-size.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/background.html'>background.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-color.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-color.html'>border-bottom-color.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-left-radius.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-left-radius.html'>border-bottom-left-radius.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-right-radius.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-right-radius.html'>border-bottom-right-radius.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-style.html'>border-bottom-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom-width.html'>border-bottom-width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-bottom.html'>border-bottom.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-collapse.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-collapse.html'>border-collapse.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-color.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-color.html'>border-color.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-outset.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-outset.html'>border-image-outset.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-repeat.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-repeat.html'>border-image-repeat.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-slice.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-slice.html'>border-image-slice.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-source.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-source.html'>border-image-source.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image-width.html'>border-image-width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image.html'>border-image.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image.png'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-image.png'>border-image.png</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-left-color.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-left-color.html'>border-left-color.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-left-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-left-style.html'>border-left-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-left-width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-left-width.html'>border-left-width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-left.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-left.html'>border-left.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-radius.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-radius.html'>border-radius.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-right-color.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-right-color.html'>border-right-color.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-right-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-right-style.html'>border-right-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-right-width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-right-width.html'>border-right-width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-right.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-right.html'>border-right.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-spacing.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-spacing.html'>border-spacing.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-style.html'>border-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-color.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-color.html'>border-top-color.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-left-radius.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-left-radius.html'>border-top-left-radius.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-right-radius.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-right-radius.html'>border-top-right-radius.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-style.html'>border-top-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top-width.html'>border-top-width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-top.html'>border-top.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border-width.html'>border-width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/border.html'>border.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/bottom.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/bottom.html'>bottom.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/box-decoration-break.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/box-decoration-break.html'>box-decoration-break.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/box-shadow.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/box-shadow.html'>box-shadow.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/box-sizing.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/box-sizing.html'>box-sizing.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/caption-side.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/caption-side.html'>caption-side.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/clear.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/clear.html'>clear.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/clip-path.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/clip-path.html'>clip-path.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/clip.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/clip.html'>clip.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/color.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/color.html'>color.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/content.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/content.html'>content.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/direction.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/direction.html'>direction.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/display.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/display.html'>display.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/empty-cells.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/empty-cells.html'>empty-cells.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/filter.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/filter.html'>filter.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-basis.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-basis.html'>flex-basis.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-direction.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-direction.html'>flex-direction.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-flow.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-flow.html'>flex-flow.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-grow.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-grow.html'>flex-grow.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-shrink.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-shrink.html'>flex-shrink.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-wrap.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex-wrap.html'>flex-wrap.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/flex.html'>flex.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/float.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/float.html'>float.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-family.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-family.html'>font-family.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-size.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-size.html'>font-size.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-style.html'>font-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-variant.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-variant.html'>font-variant.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-weight.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font-weight.html'>font-weight.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/font.html'>font.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/height.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/height.html'>height.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/keyframes.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/keyframes.html'>keyframes.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/letter-spacing.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/letter-spacing.html'>letter-spacing.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/line-height.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/line-height.html'>line-height.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/list-style-image.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/list-style-image.html'>list-style-image.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/list-style-position.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/list-style-position.html'>list-style-position.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/list-style-type.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/list-style-type.html'>list-style-type.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/list-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/list-style.html'>list-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin-bottom.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin-bottom.html'>margin-bottom.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin-left.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin-left.html'>margin-left.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin-right.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin-right.html'>margin-right.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin-top.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin-top.html'>margin-top.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/margin.html'>margin.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/max-height.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/max-height.html'>max-height.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/max-width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/max-width.html'>max-width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/min-height.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/min-height.html'>min-height.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/min-width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/min-width.html'>min-width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/opacity.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/opacity.html'>opacity.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/order.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/order.html'>order.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline-color.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline-color.html'>outline-color.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline-offset.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline-offset.html'>outline-offset.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline-style.html'>outline-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline-width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline-width.html'>outline-width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/outline.html'>outline.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/overflow-x.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/overflow-x.html'>overflow-x.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/overflow-y.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/overflow-y.html'>overflow-y.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/overflow.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/overflow.html'>overflow.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding-bottom.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding-bottom.html'>padding-bottom.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding-left.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding-left.html'>padding-left.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding-right.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding-right.html'>padding-right.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding-top.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding-top.html'>padding-top.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/padding.html'>padding.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/perspective-origin.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/perspective-origin.html'>perspective-origin.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/perspective.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/perspective.html'>perspective.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/position.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/position.html'>position.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/tab-size.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/tab-size.html'>tab-size.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/table-layout.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/table-layout.html'>table-layout.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-align-last.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-align-last.html'>text-align-last.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-align.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-align.html'>text-align.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-decoration-color.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-decoration-color.html'>text-decoration-color.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-decoration-line.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-decoration-line.html'>text-decoration-line.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-decoration-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-decoration-style.html'>text-decoration-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-decoration.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-decoration.html'>text-decoration.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-indent.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-indent.html'>text-indent.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-justify.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-justify.html'>text-justify.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-overflow.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-overflow.html'>text-overflow.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-shadow.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-shadow.html'>text-shadow.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-transform.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-transform.html'>text-transform.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-underline-position.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/text-underline-position.html'>text-underline-position.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/top.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/top.html'>top.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transform-origin.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transform-origin.html'>transform-origin.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transform-style.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transform-style.html'>transform-style.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transform.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transform.html'>transform.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transform3d.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transform3d.html'>transform3d.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition-delay.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition-delay.html'>transition-delay.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition-duration.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition-duration.html'>transition-duration.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition-property.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition-property.html'>transition-property.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition-timing-function.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition-timing-function.html'>transition-timing-function.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/transition.html'>transition.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/unicode-bidi.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/unicode-bidi.html'>unicode-bidi.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/user-select.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/user-select.html'>user-select.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/vertical-align.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/vertical-align.html'>vertical-align.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/visibility.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/visibility.html'>visibility.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/white-space.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/white-space.html'>white-space.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/width.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/width.html'>width.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/word-break.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/word-break.html'>word-break.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/word-spacing.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/word-spacing.html'>word-spacing.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/word-wrap.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/word-wrap.html'>word-wrap.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/z-index.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Propiedades/z-index.html'>z-index.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/CSS/Reglas/'><div class='Lab_IcoDirectorioC'></div><span>Reglas</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Reglas/font-face.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Reglas/font-face.html'>font-face.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Reglas/keyframes.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Reglas/keyframes.html'>keyframes.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Reglas/media.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Reglas/media.html'>media.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/CSS/Selectores/'><div class='Lab_IcoDirectorioC'></div><span>Selectores</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/active.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/active.html'>active.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/after.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/after.html'>after.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Asterisco.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Asterisco.html'>Asterisco.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Atributo$Valor.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Atributo$Valor.html'>Atributo$Valor.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Atributo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Atributo.html'>Atributo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/AtributoEmpiezaValor.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/AtributoEmpiezaValor.html'>AtributoEmpiezaValor.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/AtributoEsValor.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/AtributoEsValor.html'>AtributoEsValor.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/AtributoString.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/AtributoString.html'>AtributoString.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/AtributoValor.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/AtributoValor.html'>AtributoValor.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Atributo~Palabra.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Atributo~Palabra.html'>Atributo~Palabra.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/before.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/before.html'>before.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/checked.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/checked.html'>checked.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Clase.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Clase.html'>Clase.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/default.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/default.html'>default.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/disabled.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/disabled.html'>disabled.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ElementoDentroElemento.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ElementoDentroElemento.html'>ElementoDentroElemento.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ElementoDespuesElemento.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ElementoDespuesElemento.html'>ElementoDespuesElemento.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ElementoPadreElemento.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ElementoPadreElemento.html'>ElementoPadreElemento.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ElementoPrecedidoElemento.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ElementoPrecedidoElemento.html'>ElementoPrecedidoElemento.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/empty.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/empty.html'>empty.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/enabled.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/enabled.html'>enabled.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Etiqueta.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/Etiqueta.html'>Etiqueta.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/first-child.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/first-child.html'>first-child.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/first-letter.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/first-letter.html'>first-letter.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/first-line.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/first-line.html'>first-line.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/first-of-type.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/first-of-type.html'>first-of-type.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/focus.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/focus.html'>focus.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/hover.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/hover.html'>hover.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ID.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/ID.html'>ID.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/lang.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/lang.html'>lang.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/last-child.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/last-child.html'>last-child.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/last-of-type.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/last-of-type.html'>last-of-type.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/link.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/link.html'>link.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/MultiplesElementos.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/MultiplesElementos.html'>MultiplesElementos.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/not.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/not.html'>not.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/nth-child.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/nth-child.html'>nth-child.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/nth-last-child.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/nth-last-child.html'>nth-last-child.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/nth-last-of-type.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/nth-last-of-type.html'>nth-last-of-type.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/nth-of-type.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/nth-of-type.html'>nth-of-type.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/only-child.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/only-child.html'>only-child.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/only-of-type.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/only-of-type.html'>only-of-type.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/root.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/root.html'>root.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/selection.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/selection.html'>selection.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/target.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/target.html'>target.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/visited.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Selectores/visited.html'>visited.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/CSS/Variables/'><div class='Lab_IcoDirectorioC'></div><span>Variables</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Variables/ambito.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Variables/ambito.html'>ambito.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/CSS/Variables/javascript.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/CSS/Variables/javascript.html'>javascript.html</a></div></div></div></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Dado3d/'><div class='Lab_IcoDirectorioC'></div><span>Dado3d</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Dado3d/Dado3D_js.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Dado3d/Dado3D_js.html'>Dado3D_js.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Dado3d/Dado3D_jsv2.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Dado3d/Dado3D_jsv2.html'>Dado3D_jsv2.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Domino/'><div class='Lab_IcoDirectorioC'></div><span>Domino</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Domino/CSS/'><div class='Lab_IcoDirectorioC'></div><span>CSS</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Domino/CSS/Domino.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Domino/CSS/Domino.css'>Domino.css</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Domino/index.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Domino/index.html'>index.html</a></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Domino/JS/'><div class='Lab_IcoDirectorioC'></div><span>JS</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino.js'>Domino.js</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_Ficha.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_Ficha.js'>Domino_Ficha.js</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_Opciones.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_Opciones.js'>Domino_Opciones.js</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_Partida.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_Partida.js'>Domino_Partida.js</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_Texturas.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_Texturas.js'>Domino_Texturas.js</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_UI.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Domino/JS/Domino_UI.js'>Domino_UI.js</a></div></div></div></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/FlexBox/'><div class='Lab_IcoDirectorioC'></div><span>FlexBox</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/FlexBox/Documento.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/FlexBox/Documento.html'>Documento.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Menus/'><div class='Lab_IcoDirectorioC'></div><span>Menus</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Menus/MenuDesalineado.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Menus/MenuDesalineado.html'>MenuDesalineado.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Menus/MenuEsfera.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Menus/MenuEsfera.html'>MenuEsfera.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Menus/MenuPregunta.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Menus/MenuPregunta.html'>MenuPregunta.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Menus/MenuSubrayado.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Menus/MenuSubrayado.html'>MenuSubrayado.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Nuevo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Nuevo.html'>Nuevo.html</a></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Solitario/'><div class='Lab_IcoDirectorioC'></div><span>Solitario</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Solitario/Solitario.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Solitario/Solitario.css'>Solitario.css</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Solitario/Solitario.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Solitario/Solitario.html'>Solitario.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Solitario/Solitario.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Solitario/Solitario.js'>Solitario.js</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/SpaceInvaders404/'><div class='Lab_IcoDirectorioC'></div><span>SpaceInvaders404</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/SpaceInvaders404/SpaceInvaders404.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/SpaceInvaders404/SpaceInvaders404.css'>SpaceInvaders404.css</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/SpaceInvaders404/SpaceInvaders404.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/SpaceInvaders404/SpaceInvaders404.html'>SpaceInvaders404.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/SpaceInvaders404/SpaceInvaders404.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/SpaceInvaders404/SpaceInvaders404.js'>SpaceInvaders404.js</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/SVG/'><div class='Lab_IcoDirectorioC'></div><span>SVG</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/SVG/Iconos.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/SVG/Iconos.html'>Iconos.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/TablaFija/'><div class='Lab_IcoDirectorioC'></div><span>TablaFija</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/TablaFija/TablaFija.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/TablaFija/TablaFija.html'>TablaFija.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Transition/'><div class='Lab_IcoDirectorioC'></div><span>Transition</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Transition/banner.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Transition/banner.html'>banner.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Transition/Botones.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Transition/Botones.html'>Botones.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Tutorial_HTML5/'><div class='Lab_IcoDirectorioC'></div><span>Tutorial_HTML5</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_2_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_2_Ejemplo.html'>Tutorial_HTML5_2_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_3_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_3_Ejemplo.html'>Tutorial_HTML5_3_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_4_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_4_Ejemplo.html'>Tutorial_HTML5_4_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_5_Ejemplo.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_5_Ejemplo.css'>Tutorial_HTML5_5_Ejemplo.css</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_5_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_5_Ejemplo.html'>Tutorial_HTML5_5_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_6_Ejemplo.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_6_Ejemplo.css'>Tutorial_HTML5_6_Ejemplo.css</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_6_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_6_Ejemplo.html'>Tutorial_HTML5_6_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_7_Ejemplo.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_7_Ejemplo.css'>Tutorial_HTML5_7_Ejemplo.css</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_7_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_7_Ejemplo.html'>Tutorial_HTML5_7_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_8_Ejemplo.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_8_Ejemplo.css'>Tutorial_HTML5_8_Ejemplo.css</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_8_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_8_Ejemplo.html'>Tutorial_HTML5_8_Ejemplo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_9_Ejemplo.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_9_Ejemplo.css'>Tutorial_HTML5_9_Ejemplo.css</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_9_Ejemplo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Tutorial_HTML5/Tutorial_HTML5_9_Ejemplo.html'>Tutorial_HTML5_9_Ejemplo.html</a></div></div></div></div></div><div class='Lab_Item'><div class='Lab_Directorio' path='/Lab/Ejemplos/Utils/'><div class='Lab_IcoDirectorioC'></div><span>Utils</span></div><div class='Lab_Directorio_Animacion'><div class='Lab_Lista'><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoAnimacion.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoAnimacion.js'>ObjetoAnimacion.js</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoCanvas.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoCanvas.js'>ObjetoCanvas.js</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoLogo.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoLogo.html'>ObjetoLogo.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoTest.css'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoTest.css'>ObjetoTest.css</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoTest.html'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoTest.html'>ObjetoTest.html</a></div></div><div class='Lab_Item'><div class='Lab_Archivo' path='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoTest.js'><div class='Lab_IcoArchivo'></div><a href='https://devildrey33.es/Lab/Ejemplos/Utils/ObjetoTest.js'>ObjetoTest.js</a></div></div></div></div></div></div></div></div></div><div id='BarraNavegacion_Indice' class='Menu' mostrar='true'><input id='BarraNavegacion_Indice_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraNavegacion_Indice_Estado' tooltip-es='Secciones del documento' tooltip-en='Document sections' tooltip-pos='R'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-sub-indice' /></span></div><div class='Menu_Marco' id='BarraNavegacion_SubIndice'></div></div><div id='BarraNavegacion_NextPrev' class='Menu' mostrar='true'><input id='BarraNavegacion_PrevNext_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraNavegacion_PrevNext_Estado' tooltip-es='Navegación por el Blog' tooltip-en='Navigate' tooltip-pos='R'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-lista' /></span></div><div class='Menu_Marco' id='BarraNavegacion_MarcoNextPrev'><button class='BotonSvg-Normal' id='BarraNavegacion_MarcoNextPrev_Prev'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-prev'></button><button class='BotonSvg-Normal' id='BarraNavegacion_MarcoNextPrev_Desc'></button><button class='BotonSvg-Normal' id='BarraNavegacion_MarcoNextPrev_Next'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-next'></button></div></div><div id='BarraNavegacion_RedesSociales' class='Menu' mostrar='true'><input id='BarraNavegacion_RedesSociales_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraNavegacion_RedesSociales_Estado' tooltip-es='Redes sociales' tooltip-en='Social networks' tooltip-pos='R'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-redes-sociales' /></span></div><div class='Menu_Marco' id='BarraNavegacion_MarcoRedesSociales'><div class='Menu_Boton' id='BarraNavegacion_MarcoRedesSociales_Facebook' tooltip-es='Facebook' tooltip-en='Facebook' tooltip-pos='T'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-facebook' /></span></div><div class='Menu_Boton' id='BarraNavegacion_MarcoRedesSociales_Twitter' tooltip-es='Twitter' tooltip-en='Twitter' tooltip-pos='T'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-twitter' /></span></div><div class='Menu_Boton' id='BarraNavegacion_MarcoRedesSociales_GooglePlus' tooltip-es='Google plus' tooltip-en='Google plus' tooltip-pos='T'><span class='Menu_Boton_Cruz'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-gplus' /></span></div></div></div><div id='BarraNavegacion_Votacion' class='Menu'><input id='BarraNavegacion_Votacion_Estado' class='Menu_Boton_Input' type='checkbox' /><label class='Menu_Boton_Label' for='BarraNavegacion_Votacion_Estado' tooltip-es='Valoración del documento' tooltip-en='Document valoration' tooltip-pos='R'></label><div class='Menu_Boton'><span class='Menu_Boton_Cruz'><span><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-votacion' /></span></span></div><div class='Menu_Marco' id='BarraNavegacion_MarcoVotacion'><span></span><span></span><div class='VotarDocumento_Estrellas'><button class='Boton-Normal'>1</button><button class='Boton-Normal'>2</button><button class='Boton-Normal'>3</button><button class='Boton-Normal'>4</button><button class='Boton-Normal'>5</button></div></div></div><div id='BarraNavegacion_LabGuardar' tooltip-es='Guardar archivo' tooltip-en='Save file' tooltip-pos='R' class='Menu_Boton'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-guardar' /></div><div id='BarraNavegacion_LabGuardarCache' tooltip-es='Guardar cache explorador' tooltip-en='Save explorer cache' tooltip-pos='R' class='Menu_Boton'><img class='Menu_Boton_SVG' src='https://devildrey33.es/Web/SVG/Iconos50x50.svg#svg-guardar-cache' /></div></nav><div id='Logo' class='AnimarLogo SinSeleccion'><div>D</div><div>E</div><div>V</div><div>I</div><div>L</div><div>D</div><div>R</div><div>E</div><div>Y</div><div>&nbsp;</div><div>3</div><div>3</div></div><div id='MarcoNavegacion'><article id='MarcoNavegacionLab' pagina='https://devildrey33.es/Lab/Ejemplos/BannerTest/Ejemplos/BannerTest/EspectroAudible.html'><textarea id="Lab_Codigo" name="code" style="display:none"><!-- 
+    Test para el API de Audio creado por Josep Antoni Bover Comas el 29-10-2016
+
+        Vista por defecto en el Laboratorio de pruebas  
+		devildrey33_Lab->Opciones->Vista = Preview;
+
+        Ultima modificación el 23/02/2017
+
+    En este ejemplo se han utilizado las siguientes canciones :
+
+    [Grupo]             [Titulo]                               [Url jamendo]
+    LevenRain           ActionMan Versus The CyberParasites    https://www.jamendo.com/track/1349290/actionman-versus-the-cyberparasites
+    Fallen to Flux      One Chance                             https://www.jamendo.com/track/1155241/one-chance
+    From Sky to Abyss   Quantum Ocean                          https://www.jamendo.com/track/1284951/quantum-ocean
+    In Camera           Nothing's Over                         https://www.jamendo.com/track/1397271/nothing-s-over
+    Convergence         Six Feet Under                         https://www.jamendo.com/track/80122/six-feet-under
+    JT Bruce            Battle Trance                          https://www.jamendo.com/track/1237162/battle-trance 
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+        <!-- Estilos CSS para el test -->
+        <link rel='stylesheet' href='https://devildrey33.es/Ejemplos/Utils/ObjetoCanvas.css' />        
+        
+        <!-- Estilos CSS para el ObjetoTest -->
+<!--        <link rel='stylesheet' href='/Ejemplos/Utils/ObjetoTest.css' /> -->
+        <!-- Objeto para crear tests rápidos -->
+<!--        <script src="/Ejemplos/Utils/ObjetoTest.js"></script> -->
+        
+        <!-- Si deseas utilizar JQuery descomenta la siguiente línea -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+        <!-- Three.JS -->
+        <script src="https://devildrey33.es/Web/JS/3rdParty/three-0.84.min.js"></script>
+<!--        <script src="/Web/JS/3rdParty/three-0.79.min.js"></script> -->
+        <!-- Three.JS para depuración -->
+        <!-- <script src="/Web/JS/3rdParty/three-0.79.js"></script> -->
+
+        <!-- ObjetoCanvas similar al ObjetoBanner para testear Banners -->
+        <script src="https://devildrey33.es/Ejemplos/Utils/ObjetoCanvas.js"></script>
+        
+        <!-- Objeto para crear animaciones de tiempo -->
+        <script src="https://devildrey33.es/Ejemplos/Utils/ObjetoAnimacion.js"></script>
+       
+
+        <!-- Código javascript --> 
+<script type="text/javascript">
+
+var EspectroAudible = function() {
+    // Llamo al constructor del ObjetoBanner
+    if (ObjetoCanvas.call(this, { 
+        Tipo                : 'THREE',
+        Ancho               : 'Auto',
+        Alto                : 'Auto',
+        Entorno             : 'Normal',
+        Idioma              : 'es',
+        BotonLogo           : false,
+        MostrarFPS          : true,
+        ElementoRaiz        : document.body,
+        Pausar              : false,             // Pausa el canvas si la pestaña no tiene el foco del teclado
+        ColorFondo          : 0x000000,
+        CapturaEjemplo      : "EspectroAudible.png",
+        ForzarLandscape     : true
+    }) === false) { return false; }
+    
+    // Se ha creado el canvas, inicio los valores de la animación ... 
+    this.Iniciar();
+    
+    // Esconde la ventana que informa al usuario de que se está cargando la animación. (REQUERIDO)
+//    this.Cargando(false);
+};
+
+EspectroAudible.prototype = Object.assign( Object.create(ObjetoCanvas.prototype) , {
+    constructor     : EspectroAudible, 
+    // Función que se llama al redimensionar el documento
+    Redimensionar   : function() {    },
+    // Función que se llama al hacer scroll en el documento    
+    Scroll          : function() {    },
+    // Función que se llama al mover el mouse por el canvas
+    MouseMove       : function(Evento) { 
+        this.MouseMovido = true;
+        this.PosMouse.x = ( Evento.clientX / window.innerWidth ) * 2 - 1;
+	this.PosMouse.y = - ( Evento.clientY / window.innerHeight ) * 2 + 1;
+        
+        if (this.Pantalla.Hover === true || this.Pantalla2.Hover === true || this.Pantalla3.Hover === true ||
+            this.C_Atras.Hover === true || this.C_Play.Hover === true || this.C_Adelante.Hover === true ||
+            this.BarrasAnalizador.Hover === true || this.C_BarraTiempo.Hover === true || this.C_SliderTiempo.Hover === true || this.DatosCancion.Hover === true) { 
+            document.body.style.cursor = "pointer";             
+        }
+        else { 
+            document.body.style.cursor = "default"; 
+        }        
+    },
+    // Función que se llama al presionar un botón del mouse por el canvas
+    MousePresionado : function(Evento) { },
+    // Función que se llama al soltar un botón del mouse por el canvas
+    MouseSoltado    : function(Evento) { 
+        if (this.Pantalla.Hover === true) {
+            this.TipoPantalla ++; 
+            if (this.TipoPantalla > this.FuncionesPintarPantalla.length -1) { this.TipoPantalla = 0; }
+        }
+        if (this.Pantalla2.Hover === true) {
+            this.TipoPantalla2 ++; 
+            if (this.TipoPantalla2 > this.FuncionesPintarPantalla.length -1) { this.TipoPantalla2 = 0; }
+        }
+        if (this.Pantalla3.Hover === true) {
+            this.TipoPantalla3 ++; 
+            if (this.TipoPantalla3 > this.FuncionesPintarPantalla.length -1) { this.TipoPantalla3 = 0; }
+        }
+        
+        if (this.C_Play.Hover === true) {
+            this.PlayPausa();
+        }
+        
+        if (this.C_Adelante.Hover === true) {
+            this.Adelante();
+        }
+        
+        if (this.C_Atras.Hover === true) {
+            this.Atras();
+        }
+        
+        if (this.BarrasAnalizador.Hover === true) {
+            this.PrecisionAnalizador ++;
+            if (this.PrecisionAnalizador > 2) this.PrecisionAnalizador = 0;
+            if (this.PrecisionAnalizador === 0) { this.ReIniciarCubos(32); }
+            if (this.PrecisionAnalizador === 1) { this.ReIniciarCubos(16); }
+            if (this.PrecisionAnalizador === 2) { this.ReIniciarCubos(8); }
+        }
+        
+        if (this.C_BarraTiempo.Hover === true) {
+            var ct = (this.Audio.TiempoTotal() / this.AnchoBarraTiempo) * this.C_BarraTiempo.PosHover;
+            this.Audio.NuevoTiempoActual(ct);             
+        }
+        
+        if (this.DatosCancion.Hover === true) {
+            window.open(this.Audio.Canciones[this.Audio.CancionActual].Web);
+        }
+    },
+    // Función que se llama al entrar con el mouse en el canvas
+    MouseEnter      : function(Evento) { },
+    // Función que se llama al salir con el mouse del canvas
+    MouseLeave      : function(Evento) { },
+    // Función que se llama al presionar una tecla
+    TeclaPresionada : function(Evento) { },
+    // Función que se llama al soltar una tecla
+    TeclaSoltada    : function(Evento) { },
+    // Función que se llama al presionar la pantalla
+    TouchStart      : function(Evento) { 
+        this.MouseMovido = true;
+        this.PosMouse.x = ( Evento.touches[0].clientX / window.innerWidth ) * 2 - 1;
+	this.PosMouse.y = - ( Evento.touches[0].clientY / window.innerHeight ) * 2 + 1;        
+        this.ActualizarObjetoHover();
+    },
+    // Función que se llama al mover la presión sobre la pantalla
+    TouchMove      : function(Evento) { 
+        this.MouseMovido = true;
+        this.PosMouse.x = ( Evento.touches[0].clientX / window.innerWidth ) * 2 - 1;
+	this.PosMouse.y = - ( Evento.touches[0].clientY / window.innerHeight ) * 2 + 1;        
+    },
+    // Función que se llama al soltar el dedo de la pantalla
+    TouchEnd        : function(Evento) { 
+        this.MouseSoltado();
+    },    
+    // Función que se llama al pausar el banner
+    Pausa           : function() { this.Cancion.pause(); },
+    // Función que se llama al reanudar el banner
+    Reanudar        : function() { this.Cancion.play(); },
+    
+    Cubos           : [],    
+    
+    Animaciones     : new ObjetoAnimacion(),
+    
+    Colores         : { 
+        Suelo       : new THREE.Color(0x232323), // 0x718BA4
+        Barras      : new THREE.Color(0x333333), // 0x718395
+        Texto       : new THREE.Color(0xffffff), // 0xffffff
+        SombraTexto : new THREE.Color(0x000000), // 0xffffff
+        Controles   : new THREE.Color(0x313132), // 0x6788A0
+        Icos        : new THREE.Color(0x191900)  // 
+    },
+    
+    Volumen         : 1,
+    RayCaster       : new THREE.Raycaster(),
+    PosMouse        : new THREE.Vector2(),
+    MouseMovido     : false,
+    
+    
+    CancionActual   : [],
+    //UltimaCancion   : "",
+    
+    // Función que inicia el ejemplo
+    Iniciar         : function() {           
+        this.Context.shadowMap.enabled = true;
+        this.Escena = new THREE.Scene();
+        window.scene = this.Escena; // Three.js inspector plugin for chrome
+        this.Camara = new THREE.PerspectiveCamera(75, this.Ancho / this.Alto, 0.5, 2000);
+        this.Camara.Rotacion = { Grados : 97 * this.Constantes.Radiant, Avance : this.Constantes.Radiant / 5, Distancia : 40, MirarHacia : new THREE.Vector3(0, 5, 0) };
+        this.Camara.position.set(this.Camara.Rotacion.Distancia * Math.cos(this.Camara.Rotacion.Grados), 
+                                 30, 
+                                 this.Camara.Rotacion.Distancia * Math.sin(this.Camara.Rotacion.Grados));        
+        this.Escena.add(this.Camara);
+        this.Camara.lookAt(this.Camara.Rotacion.MirarHacia);
+        
+        this.IniciarPantalla();
+        
+        this.IniciarDatosCancion();
+                
+        // Creo el suelo 
+        this.Suelo = new THREE.Mesh(new THREE.BoxGeometry(160, 40, 130), new THREE.MeshPhongMaterial({ color: this.Colores.Suelo, specular : 0xeeeeee }) );
+        this.Suelo.position.y = -20;
+        this.Suelo.castShadow = false;
+        this.Suelo.receiveShadow = true;
+        this.Escena.add(this.Suelo);
+        
+        // Grupo para las barras del analizador
+        this.BarrasAnalizador = new THREE.Group(); 
+        this.Escena.add(this.BarrasAnalizador); 
+        
+        // Creo un cubo con el area que pueden ocupar todas las barras del analizador de frequencias
+        // Es necesario para detectar en el hover los espacios vacios entre las barras 
+        this.SueloAnalizador = new THREE.Mesh(new THREE.BoxGeometry(32, 0.6, 32), new THREE.MeshPhongMaterial({ color: this.Colores.Suelo, specular : 0xeeeeee }) );
+        this.BarrasAnalizador.add(this.SueloAnalizador);
+        
+        // Controles del reproductor
+        var Geo = new THREE.BoxGeometry(35, 1, 8);
+        Geo.translate(0, 0, -4); // Muevo el eje para la rotación
+        this.Controles = new THREE.Mesh(Geo, new THREE.MeshPhongMaterial({ color: this.Colores.Suelo, specular : 0xeeeeee }) );
+        this.Controles.name ="Controles";
+        this.Controles.rotation.x -= Math.PI / 2;
+        this.Controles.position.z = 26;
+        this.Controles.position.y = -0.4;
+        this.Controles.castShadow = true;
+        this.Controles.receiveShadow = true;
+        this.Controles.Angulo = 0;
+               
+        // Controles : Atras, Play / Pausa, Stop, Adelante
+        this.C_Atras = new THREE.Mesh(new THREE.BoxGeometry(3, 1, 3), new THREE.MeshPhongMaterial({ color: this.Colores.Controles, specular : 0xeeeeee }));
+        this.C_Atras.position.set(-4, 0.2, -2.5);
+        this.Controles.add(this.C_Atras);
+        this.C_Play = new THREE.Mesh(new THREE.BoxGeometry(3, 1, 3), new THREE.MeshPhongMaterial({ color: this.Colores.Controles, specular : 0xeeeeee }));
+        this.C_Play.position.set(-0, 0.2, -2.5);
+        this.Controles.add(this.C_Play);
+        this.C_Adelante = new THREE.Mesh(new THREE.BoxGeometry(3, 1, 3), new THREE.MeshPhongMaterial({ color: this.Colores.Controles, specular : 0xeeeeee }));
+        this.C_Adelante.position.set(4, 0.2, -2.5);
+        this.Controles.add(this.C_Adelante);
+        // Slider del tiempo (el mismo slider sirve como display para el tiempo
+        this.AnchoBarraTiempo = 28;
+        this.C_BarraTiempo = new THREE.Mesh(new THREE.BoxGeometry(this.AnchoBarraTiempo, 1, 1), new THREE.MeshPhongMaterial({ color: this.Colores.Controles, specular : 0xeeeeee }));
+        this.C_BarraTiempo.position.set(0, 0.2, -6);
+        this.Controles.add(this.C_BarraTiempo);
+        this.C_SliderTiempo = new THREE.Mesh(new THREE.BoxGeometry(4, 1.2, 2.2), new THREE.MeshPhongMaterial({ color: this.Colores.Controles, specular : 0xeeeeee }));
+        this.C_SliderTiempo.position.set(-(this.AnchoBarraTiempo / 2 ), 0.3, -6);
+        this.Controles.add(this.C_SliderTiempo);
+        
+        this.Escena.add(this.Controles);
+        
+        this.CrearTexturasBotones();
+        
+        // Niebla
+//        this.Escena.fog = new THREE.Fog(0x888888, 10.1, 150);
+        
+        this.IniciarLuces();
+        
+        // Array de funciones de pintado para las pantallas
+        this.FuncionesPintarPantalla = [ 
+            this.PintarPantalla_OndaSin.bind(this), 
+            this.PintarPantalla_Circular.bind(this),
+            this.PintarPantalla_Circular8.bind(this), 
+            this.PintarPantalla_Solar.bind(this) 
+        ];
+
+        this.IniciarTransiciones();
+        
+        var fftSize = (ObjetoNavegador.EsMovil() === false) ? 2048 : 512;
+        this.PrecisionAnalizador = (fftSize === 2048) ? 0 : 1;
+        
+        this.Audio = new EspectroAudible_Audio();
+        this.Audio.Iniciar(fftSize, this, 
+                            function() { this.CancionCargada(); this.PlayPausa(); }.bind(this), // Función CanPlay
+                            this.CancionTerminada.bind(this) );                                 // Función Ended
+        
+        this.Audio.CargarCancion(RandInt(this.Audio.Canciones.length - 1));
+        
+        this.ReIniciarCubos(Math.sqrt(fftSize / 2));    
+
+    },
+    
+    CancionCargada : function() {
+        if (this.Audio.CancionActual !== -1) {
+            var c = this.Audio.Canciones[this.Audio.CancionActual];
+            this.PintarDatosCancion(c.Grupo, c.Titulo, c.Año );        
+        }
+        else {
+            this.PintarDatosCancion("Drag & Drop", "", "");                    
+        }
+    },
+    
+    CancionTerminada : function() {
+        this.PlanoTextura[1].visible = true;                    
+        this.PlanoTextura[2].visible = false;
+    },
+    
+    PlayPausa : function() {
+        var p = this.Audio.PlayPausa(); // play : true, pausa : false
+        this.PlanoTextura[1].visible = !p;
+        this.PlanoTextura[2].visible = p;
+    },
+    
+    Adelante : function() {
+        this.Cargando(true);
+        this.Audio.Adelante();
+    },
+    
+    Atras : function() {
+        this.Cargando(true);
+        this.Audio.Atras();
+    },
+    
+    CrearTexturasBotones : function() {
+        // Creo los buffers para los 4 iconos
+        this.BufferIcos = [];
+        this.PlanoTextura = [];
+
+        this.BufferIcosTextura = [];
+        for (var i = 0; i < 4; i++) { 
+            this.BufferIcos[i] = new BufferCanvas(128, 128); 
+            this.BufferIcos[i].fillStyle = "#FFFFFF";
+            this.BufferIcosTextura[i] = new THREE.Texture(this.BufferIcos[i].Canvas);
+        }
+
+        // Icono Atras
+        this.PintarTrianguloRedondeado(this.BufferIcos[0].Context, 92, 64, 38, 270, 25);
+        this.PintarRectanguloRedondeado(this.BufferIcos[0].Context, 14, 30, 22, 30, 22, 99, 14, 99, 25);
+//        this.BufferIcos[0].Context.fillRect(0, 0, this.BufferIcos[0].Ancho, this.BufferIcos[0].Alto);
+        
+        // Icono Play
+        this.PintarTrianguloRedondeado(this.BufferIcos[1].Context, 60, 64, 50, 90, 25);
+        
+        // Icono Pausa
+        this.PintarRectanguloRedondeado(this.BufferIcos[2].Context, 30, 30, 38, 30, 38, 99, 30, 99, 25);
+        this.PintarRectanguloRedondeado(this.BufferIcos[2].Context, 92, 30, 100, 30, 100, 99, 92, 99, 25);
+        
+        // Icono Adelante
+        this.PintarTrianguloRedondeado(this.BufferIcos[3].Context, 34, 64, 38, 90, 25);
+        this.PintarRectanguloRedondeado(this.BufferIcos[3].Context, 106, 30, 114, 30, 114, 99, 106, 99, 25);
+        
+        for (var i = 0; i < 4; i++) { 
+            this.PlanoTextura[i] = new THREE.Mesh(
+                new THREE.PlaneGeometry( 2, 2 ),
+                new THREE.MeshBasicMaterial({ 
+                    color: this.Colores.Icos,
+                    map: this.BufferIcosTextura[i],
+                    transparent:true
+                })
+                //new THREE.MeshPhongMaterial({ color: this.Colores.Texto, specular : 0xeeeeee })                
+            );
+            this.PlanoTextura[i].rotation.x = -Math.PI / 2;
+            this.PlanoTextura[i].position.y = .55;
+        }
+        this.C_Atras.add(this.PlanoTextura[0]); 
+        this.C_Play.add(this.PlanoTextura[1]); // play
+        this.C_Play.add(this.PlanoTextura[2]);  
+        this.PlanoTextura[2].visible = false; // pausa
+        this.C_Adelante.add(this.PlanoTextura[3]);
+        
+        this.BufferIcosTextura[0].needsUpdate = true;        
+        this.BufferIcosTextura[1].needsUpdate = true;        
+        this.BufferIcosTextura[2].needsUpdate = true;        
+        this.BufferIcosTextura[3].needsUpdate = true;        
+
+        this.IniciarTransicionesBotones();
+        
+        // Creo el buffer para el tiempo actual / total del slider
+        this.BufferSlider = new BufferCanvas(256, 256); 
+        this.BufferSlider.fillStyle = "#FFFFFF";
+        this.BufferSliderTextura = new THREE.Texture(this.BufferSlider.Canvas);
+                
+        this.BufferSliderPlanoTextura = new THREE.Mesh(
+            new THREE.PlaneGeometry( 4, 3 ),
+            new THREE.MeshBasicMaterial({ 
+                map: this.BufferSliderTextura,
+                transparent:true
+            })
+        );
+        this.BufferSliderPlanoTextura.rotation.x = -Math.PI / 2;
+        this.BufferSliderPlanoTextura.position.y = 0.75;
+        this.C_SliderTiempo.add(this.BufferSliderPlanoTextura);
+        this.BufferSlider.Context.font = "56px monospace";
+        this.BufferSlider.Context.fillStyle = "#000000";
+    },
+    
+    ActualizarTiempoSlider : function() {
+        var TA = this.Audio.TiempoActual();
+        var TT = this.Audio.TiempoTotal();
+        var TMins = Math.round(Math.floor(TT) / 60);
+        var TSecs = (TT - (TMins * 60)).toFixed(0);
+        var T = TMins + ((TSecs < 10) ? ':0' : ':') + TSecs;
+        var AMins = Math.round(Math.floor(TA / 60));
+        var ASecs = Math.round(TA - (AMins * 60));
+        var A = AMins + ((ASecs < 10) ? ':0' : ':') + ASecs;
+        if (this.ActualizarTiempoSlider_T < 100) {
+            this.ActualizarTiempoSlider_T += this.Tick;
+            return;
+        }
+        this.ActualizarTiempoSlider_T = 0;
+        var Parte = this.AnchoBarraTiempo / TT;
+        // Posición del slider
+        this.C_SliderTiempo.position.x = -(this.AnchoBarraTiempo / 2) + (TA * Parte);
+              
+        this.BufferSlider.Context.clearRect(0, 0, this.BufferSlider.Ancho, this.BufferSlider.Alto);
+        this.BufferSlider.Context.fillText(A, 71, 110);
+        this.BufferSlider.Context.fillText(T, 71, 210);
+        this.BufferSliderTextura.needsUpdate = true;
+    },
+    
+    // Para las texturas de los botones atras, adelante y play
+    PintarTrianguloRedondeado : function(Context, PosX, PosY, Tam, Angulo, RadioPunta) {
+        Context.beginPath();
+        var x1 = PosX + ((Math.sin(this.Constantes.Radiant * Angulo) * Tam));
+        var y1 = PosY + ((Math.cos(this.Constantes.Radiant * Angulo) * Tam));
+        var x2 = PosX + ((Math.sin(this.Constantes.Radiant * (Angulo + 120)) * Tam));
+        var y2 = PosY + ((Math.cos(this.Constantes.Radiant * (Angulo + 120)) * Tam));
+        var x3 = PosX + ((Math.sin(this.Constantes.Radiant * (Angulo + 240)) * Tam));
+        var y3 = PosY + ((Math.cos(this.Constantes.Radiant * (Angulo + 240)) * Tam));
+
+        Context.fillStyle = "rgb(2550,255,255)";
+        Context.strokeStyle = "rgb(255,255,255)";
+        Context.lineJoin = "round";
+        Context.lineWidth = RadioPunta;
+
+        Context.moveTo(x1, y1);
+        Context.lineTo(x2, y2);
+        Context.lineTo(x3, y3);
+        Context.lineTo(x1, y1);
+        Context.closePath();
+        Context.stroke();
+        Context.fill();
+    },
+    
+    // Para la textura del boton pausa
+    PintarRectanguloRedondeado : function(Context, PosX1, PosY1, PosX2, PosY2, PosX3, PosY3, PosX4, PosY4, RadioPunta) {
+        Context.beginPath();
+        Context.fillStyle = "rgb(2550,255,255)";
+        Context.strokeStyle = "rgb(255,255,255)";
+        Context.lineJoin = "round";
+        Context.lineWidth = RadioPunta;
+        Context.moveTo(PosX1, PosY1);
+        Context.lineTo(PosX2, PosY2);
+        Context.lineTo(PosX3, PosY3);
+        Context.lineTo(PosX4, PosY4);
+        Context.closePath();
+        Context.stroke();
+        Context.fill();
+    },           
+    
+    // Reinicia la parrilla de cubos con el tamaño especificado
+    ReIniciarCubos    : function(TamLado) {
+        var TamBuffer = TamLado * TamLado;
+        this.Audio.Analizador.fftSize = TamBuffer * 2;
+        this.DatosAnalizador = new Uint8Array(TamBuffer);
+        this.DatosAnalizadorSin = new Uint8Array(TamBuffer);
+                
+        // Elimino los cubos de la escena anterior
+        for (var i = 0; i < this.Cubos.length; i++) { this.BarrasAnalizador.remove(this.Cubos[i]); }
+               
+        this.Cubos = [];
+        var Tam = 0.8;
+        if (TamLado === 32) { Tam = 1;  }
+        if (TamLado === 16) { Tam = 2;  }
+        if (TamLado === 8)  { Tam = 4;  }
+        if (TamLado === 4)  { Tam = 8;  }
+        if (TamLado === 2)  { Tam = 16; }
+        
+        // Creo una parrilla de cubos del tamaño especificado        
+        var CuboGeo = new THREE.BoxGeometry(Tam * 0.7, 1, Tam * 0.7);
+        var CuboMat = new THREE.MeshPhongMaterial({ color: this.Colores.Barras, specular : 0x888888 }); //
+        var Contador = 0;
+        for (var z = 0; z < TamLado; z++) {
+            for (var x = 0; x < TamLado; x++) {
+                this.Cubos[Contador] = new THREE.Mesh(CuboGeo, CuboMat);
+                var nx = (x - (TamLado / 2) + 0.5) * Tam;
+                var nz = (z - (TamLado / 2) + 0.5) * Tam;
+                this.Cubos[Contador].position.set(nx, 0, nz);
+                this.Cubos[Contador].castShadow = true;
+                this.Cubos[Contador].receiveShadow = false;
+                this.BarrasAnalizador.add(this.Cubos[Contador++]);                
+            }
+        }
+    },   
+    
+    // Inicia las luces de la escena
+    IniciarLuces    : function() {
+        this.Context.setClearColor("#fdfdfd");
+        
+        this.SpotLight = new THREE.SpotLight( 0xffdddd, 1);
+        this.SpotLight.position.set(40,20,100);
+        this.SpotLight.target.position.set(0, 15, -70); // = this.Pantalla;
+        this.Escena.add(this.SpotLight);
+        this.Splhelper = new THREE.CameraHelper(this.SpotLight.shadow.camera);
+        this.Splhelper.visible = false; 
+        this.Escena.add(this.Splhelper);               
+        
+        this.SpotLight2 = new THREE.SpotLight( 0xffdddd, 1);
+        this.SpotLight2.position.set(-90,20,-100);
+        this.SpotLight2.target.position.set(0, 15, 50); // = this.Pantalla2;
+        this.Escena.add(this.SpotLight2);
+        this.Splhelper2 = new THREE.CameraHelper(this.SpotLight2.shadow.camera);
+        this.Splhelper2.visible = false; 
+        this.Escena.add(this.Splhelper2);
+        
+        this.SpotLight3 = new THREE.SpotLight( 0xffdddd, 1);
+        this.SpotLight3.position.set(90,20,-100);
+        this.SpotLight3.target.position.set(0, 15, 50); // = this.Pantalla2;
+        this.Escena.add(this.SpotLight3);
+        this.Splhelper3 = new THREE.CameraHelper(this.SpotLight3.shadow.camera);
+        this.Splhelper3.visible = false; 
+        this.Escena.add(this.Splhelper2);
+               
+        // DirectionalLight
+        this.DirLight = new THREE.DirectionalLight( 0xffdddd, 0.9 );
+        this.DirLight.color.setHSL( 0.1, 1, 0.95 );
+        this.DirLight.position.set( 25, 15, 20 ).normalize();
+        this.DirLight.position.multiplyScalar( 50 );
+        this.Escena.add( this.DirLight );
+        this.DirLight.castShadow = true;
+        this.DirLight.shadow.mapSize.width = 2048;
+        this.DirLight.shadow.mapSize.height = 2048;
+        var d = 80;
+        this.DirLight.shadow.camera.left = -d;
+        this.DirLight.shadow.camera.right = d;
+        this.DirLight.shadow.camera.top = d;
+        this.DirLight.shadow.camera.bottom = -d;
+        this.DirLight.shadow.camera.far = 3500;
+        this.Dlhelper = new THREE.CameraHelper(this.DirLight.shadow.camera);
+        this.Escena.add(this.Dlhelper);
+        this.Dlhelper.visible = false;
+                
+        // HemisphereLight  
+        this.HemiLight = new THREE.HemisphereLight( 0xeeeeee, 0xffffff, 0.4 );
+        this.HemiLight.color.setHSL( 0.6, 0.6, 0.6 );
+        this.HemiLight.groundColor.setHSL( 0.095, 1, 0.75 );
+        this.HemiLight.position.set( 0, 0, 0 );
+        this.Escena.add( this.HemiLight );         
+    },        
+
+    // Obtiene los valores medios para los sonidos graves, medios, agudos, inaudibles, y el total.
+    MediaFrequenciasAudio : function() {
+        // greus  de 0hz a 256hz
+        // mitjos de 257hz a 2000hz
+        // aguts  de 2001hz a 16000hz
+        var HzPorBarra = this.Audio.Context.sampleRate / this.Audio.Analizador.fftSize;
+        var Divisiones = [ 256, 2000, 16000, 50000 ];
+        var Total      = [ 0, 0, 0, 0, 0 ];// Graves, Medios, Agudos, Agudos inaudibles, Media de todo
+        var Valores    = [ 0, 0, 0, 0, 0 ];// Graves, Medios, Agudos, Agudos inaudibles, Media de todo
+        var Pos        = 0;        
+        var TotalFreq = this.Audio.Analizador.fftSize / 2;
+        for (var i = 0; i < TotalFreq; i++) {
+            if (i * HzPorBarra > Divisiones[Pos]) {
+                Pos++;
+            }
+            Total[Pos] ++;
+            Valores[Pos] += this.DatosAnalizador[i];
+            
+            Valores[4] += this.DatosAnalizador[i];
+        }
+        
+        return [ Valores[0] / Total[0], Valores[1] / Total[1], Valores[2] / Total[2], Valores[3] / Total[3], Valores[4] / TotalFreq ];
+    },
+           
+    // Actualiza la escala de los cubos        
+    ActualizarCubos : function() {        
+        for (var i = 0; i < this.Cubos.length; i++) {
+            this.Cubos[i].scale.y = 1 + (this.DatosAnalizador[i] / 20);
+            this.Cubos[i].position.y = this.Cubos[i].scale.y / 2;
+        }
+    },    
+    
+    
+    IniciarTransicionesBotones : function() {
+        // Transición hover para el boton cancion anterior
+        this.C_Atras.Hover = false;
+        this.C_Atras.Ani = this.Animaciones.CrearTransicion([ 
+            { Paso : { RG : 0.1 }},
+            { Paso : { RG : 1 },  Tiempo : 400 }],
+            { FuncionActualizar : function(Valores) {                     
+                this.PlanoTextura[0].material.color.setRGB(Valores.RG, Valores.RG, 0);
+            }.bind(this) 
+        });        
+        // Transición hover para el boton play / pausa
+        this.C_Play.Hover = false;
+        this.C_Play.Ani = this.Animaciones.CrearTransicion([ 
+            { Paso : { RG : 0.1 }},
+            { Paso : { RG : 1 },  Tiempo : 400 }],
+            { FuncionActualizar : function(Valores) {                     
+                this.PlanoTextura[1].material.color.setRGB(Valores.RG, Valores.RG, 0);
+                this.PlanoTextura[2].material.color.setRGB(Valores.RG, Valores.RG, 0);
+            }.bind(this) 
+        });        
+        // Transición hover para el boton cancion siguiente
+        this.C_Adelante.Hover = false;
+        this.C_Adelante.Ani = this.Animaciones.CrearTransicion([ 
+            { Paso : { RG : 0.1 }},
+            { Paso : { RG : 1 },  Tiempo : 400 }],
+            { FuncionActualizar : function(Valores) {                     
+                this.PlanoTextura[3].material.color.setRGB(Valores.RG, Valores.RG, 0);
+            }.bind(this) 
+        });            
+    },
+    
+    IniciarTransiciones : function() {
+        // Transición hover del marco para los controles        
+        this.Controles.Hover = false;
+        this.Controles.Ani = this.Animaciones.CrearTransicion([ 
+            { Paso : { Angulo : this.Controles.Angulo }},
+            { Paso : { Angulo : (this.Constantes.Radiant) * 15 },  Tiempo : 300 }],
+            { FuncionActualizar : function(Valores) { 
+                this.Controles.Angulo = Valores.Angulo;
+                this.Controles.rotation.x = Valores.Angulo;
+            }.bind(this) 
+        });                
+        this.Controles.Ani.AsignarValoresIniciales();
+        
+        // Transición hover para la pantalla central
+        this.Pantalla.Hover = false;
+        this.Pantalla.Ani = this.Animaciones.CrearTransicion([ 
+            { Paso : { Escala : 1,   Opacidad : 0.7 }},
+            { Paso : { Escala : 1.1, Opacidad : 0.9 }, Tiempo : 300 }],
+            { FuncionActualizar : function(Valores) {
+                this.Pantalla.scale.set(Valores.Escala, Valores.Escala, 1);
+                this.Pantalla.material.opacity = Valores.Opacidad;
+            }.bind(this)
+        });        
+        // Transición hover para la pantalla derecha
+        this.Pantalla2.Hover = false;
+        this.Pantalla2.Ani = this.Animaciones.CrearTransicion([ 
+            { Paso : { Escala : 1,   Opacidad : 0.7 }},
+            { Paso : { Escala : 1.1, Opacidad : 0.9 }, Tiempo : 300 }],
+            { FuncionActualizar : function(Valores) {
+                this.Pantalla2.scale.set(Valores.Escala, Valores.Escala, 1);
+                this.Pantalla2.material.opacity = Valores.Opacidad;
+            }.bind(this)
+        });        
+        // Transición hover para la pantalla izquierda
+        this.Pantalla3.Hover = false;
+        this.Pantalla3.Ani = this.Animaciones.CrearTransicion([ 
+            { Paso : { Escala : 1,   Opacidad : 0.7 }},
+            { Paso : { Escala : 1.1, Opacidad : 0.9 }, Tiempo : 300 }],
+            { FuncionActualizar : function(Valores) {
+                this.Pantalla3.scale.set(Valores.Escala, Valores.Escala, 1);
+                this.Pantalla3.material.opacity = Valores.Opacidad;
+            }.bind(this)
+        });        
+        
+        // Transición hover para las barras del analizador
+        this.BarrasAnalizador.Hover = false;
+        this.BarrasAnalizador.Ani = this.Animaciones.CrearTransicion([ 
+            { Paso : { Escala : 1,   Opacidad : 0.7 }},
+            { Paso : { Escala : 1.1, Opacidad : 0.9 }, Tiempo : 300 }],
+            { FuncionActualizar : function(Valores) {
+                this.BarrasAnalizador.scale.set(Valores.Escala, Valores.Escala, Valores.Escala);
+            }.bind(this)
+        });        
+        
+        // Transición hover para los datos de la canción
+        this.DatosCancion.Hover = false;
+        this.DatosCancion.Ani = this.Animaciones.CrearTransicion([ 
+            { Paso : { PosY : 0.1,   Opacidad : 0.5 }},
+            { Paso : { PosY : 0.9,   Opacidad : 1 }, Tiempo : 300 }],
+            { FuncionActualizar : function(Valores) {
+                this.DatosCancion.position.y = Valores.PosY;
+                this.DatosCancion.material.opacity = Valores.Opacidad;
+            }.bind(this)
+        });        
+        
+    },
+    
+    // Inicia el plano donde se mostraran los datos de la canción
+    IniciarDatosCancion : function() {
+        this.BufferDatosCancion = new BufferCanvas(1024, 256);
+        
+        this.TexturaDatosCancion = new THREE.Texture(this.BufferDatosCancion.Canvas);
+        this.DatosCancion = new THREE.Mesh(  new THREE.PlaneGeometry(64, 16), 
+                                             new THREE.MeshStandardMaterial( { map: this.TexturaDatosCancion, transparent : true, roughness: 0.5  } ));
+        this.DatosCancion.position.set(-30, 0.01, -10);
+        this.DatosCancion.receiveShadow = true;
+        this.DatosCancion.rotation.x = -Math.PI / 2;
+        this.DatosCancion.rotation.z = Math.PI / 2;
+        this.Escena.add(this.DatosCancion);
+    },
+
+    PintarDatosCancion : function(Grupo, Nombre, Año) {
+        this.BufferDatosCancion.Context.clearRect(0, 0, this.BufferDatosCancion.Ancho, this.BufferDatosCancion.Alto);
+        this.BufferDatosCancion.Context.font = "64px Georgia";
+        this.BufferDatosCancion.Context.fillStyle = "#" + this.Colores.SombraTexto.getHexString();
+        this.BufferDatosCancion.Context.fillText(Grupo, 5, 50);
+        this.BufferDatosCancion.Context.fillText(Nombre, 5, 140);
+        this.BufferDatosCancion.Context.fillText(Año, 5, 230);
+        this.BufferDatosCancion.Context.fillStyle = "#" + this.Colores.Texto.getHexString();
+        this.BufferDatosCancion.Context.fillText(Grupo, 0, 55);
+        this.BufferDatosCancion.Context.fillText(Nombre, 0, 145);
+        this.BufferDatosCancion.Context.fillText(Año, 0, 235);
+        
+        this.TexturaDatosCancion.needsUpdate = true;        
+    },
+
+    // Inicia las pantallas y el backbuffer que se utilizará para pintar las visualizaciones (onda, circular, circular8 y solar)
+    IniciarPantalla : function() {
+        // Pantalla 1
+        this.BufferPantalla = new BufferCanvas(1024,512);
+        this.BufferPantalla.Context.strokeStyle = '#ffffff';
+        this.TipoPantalla = 3; // onda = 0, circular = 1, 8 circulos = 2, solar 3        
+        this.BufferPantalla.Textura = new THREE.Texture(this.BufferPantalla.Canvas);
+        this.Pantalla = new THREE.Mesh(  new THREE.PlaneGeometry(64, 32), 
+                                         new THREE.MeshStandardMaterial( { map: this.BufferPantalla.Textura, roughness: .5, metalness: .73, transparent : true, opacity:0.7  } ));
+        this.Pantalla.position.set(0, 20, -45);
+        this.Escena.add(this.Pantalla);                
+        // Pantalla 2
+        this.BufferPantalla2 = new BufferCanvas(1024,512);
+        this.BufferPantalla2.Context.strokeStyle = '#ffffff';
+        this.TipoPantalla2 = 2; // onda = 0, circular = 1, 8 circulos = 2, solar 3        
+        this.BufferPantalla2.Textura = new THREE.Texture(this.BufferPantalla2.Canvas);        
+        this.Pantalla2 = new THREE.Mesh( new THREE.PlaneGeometry(64, 32), 
+                                         new THREE.MeshStandardMaterial( { map: this.BufferPantalla2.Textura, roughness: 0.5, metalness: 1.0, transparent : true, opacity:0.7  } ));
+        this.Pantalla2.position.set(50, 20, -13);
+        this.Pantalla2.rotation.y -= Math.PI / 2;
+        this.Escena.add(this.Pantalla2);
+        // Pantalla 3
+        this.BufferPantalla3 = new BufferCanvas(1024,512);
+        this.BufferPantalla3.Context.strokeStyle = '#ffffff';
+        this.TipoPantalla3 = 1; // onda = 0, circular = 1, 8 circulos = 2, solar 3        
+        this.BufferPantalla3.Textura = new THREE.Texture(this.BufferPantalla3.Canvas);
+        this.Pantalla3 = new THREE.Mesh( new THREE.PlaneGeometry(64, 32), 
+                                         new THREE.MeshStandardMaterial( { map: this.BufferPantalla3.Textura, roughness: 0.5, metalness: 1.0, transparent : true, opacity:0.7  } ));
+        this.Pantalla3.position.set(-50, 20, -13);
+        this.Pantalla3.rotation.y += Math.PI / 2;
+        this.Escena.add(this.Pantalla3);
+    },           
+    
+    
+    // Función que pinta en la pantalla la onda
+    PintarPantalla_OndaSin : function(Buffer, Tick) {
+        Buffer.Context.fillStyle = "rgba(0, 0, 0, 0.5)";
+        Buffer.Context.strokeStyle = 'rgb(' + Math.round(128 + this.MediaAudio[4]) + ',' + Math.round(255 - this.MediaAudio[4]) +  ', 0)';
+        var Tam = this.Audio.Analizador.fftSize / 2;
+        Buffer.Context.fillRect(0, 0, Buffer.Ancho, Buffer.Alto);
+        var Avance = 1024 / Tam;
+        Buffer.Context.beginPath();        
+        Buffer.Context.moveTo(0, Buffer.Alto / 2);
+        var x = 0, y = 0;
+        for (var i = 0; i < Tam; i++) {
+            y = (Buffer.Alto / 4) + this.DatosAnalizadorSin[i];
+            Buffer.Context.lineTo(x, y);
+            x += Avance;
+        }
+        // Parche para bajas precisiones que no terminan la onda al final del canvas
+        Buffer.Context.lineTo(this.Ancho, y);
+        // Pinto la onda
+        Buffer.Context.stroke();
+        // Actualizo la textura
+        Buffer.Textura.needsUpdate = true;
+    },
+
+    // Inspirado en el pen de Noel Delgado : https://codepen.io/noeldelgado/pen/EaNjBy?editors=0010
+    PintarPantalla_Solar : function(Buffer, Tick) {        
+        var mx = (Buffer.Ancho / 2);
+        var my = (Buffer.Alto / 2);
+        Buffer.Context.fillStyle = "rgba(0, 0, 0, 0.5)";
+        Buffer.Context.fillRect(0, 0, Buffer.Ancho, Buffer.Alto);
+        var TamBuffer = this.Audio.Analizador.fftSize / 2;
+        var Avance = this.Constantes.TAU / TamBuffer;
+        var Angulo = Tick;
+        var Valor = this.DatosAnalizadorSin[0];
+        
+        // Pinto el circulo con la media de los graves
+        var ColG = 'rgb(' + Math.round(120 + this.MediaAudio[0]) + ',' + Math.round(255 - this.MediaAudio[0]) +  ', 0)';
+        Buffer.Context.strokeStyle = ColG;
+        Buffer.Context.beginPath();        
+        Buffer.Context.arc(mx, my, 30 + this.MediaAudio[0], 0, this.Constantes.TAU, false);
+        Buffer.Context.stroke();
+
+        // Pinto el circulo con la media de los medios        
+        var Gris = 32 + Math.round(this.MediaAudio[1]);
+        var ColM = 'rgb(' + Gris + ',' + Gris + ',' + Gris + ')';
+        Buffer.Context.strokeStyle = ColM;
+        Buffer.Context.beginPath();        
+        Buffer.Context.arc(mx, my, 38 + this.MediaAudio[1], 0, this.Constantes.TAU, false);
+        Buffer.Context.stroke();
+        
+        // Pinto el circulo con la media de los agudos        
+        var ColA = 'rgb(0, ' + Math.round(120 + this.MediaAudio[2]) + ',' + Math.round(128 - this.MediaAudio[2]) +  ')';
+        Buffer.Context.strokeStyle = ColA;
+        Buffer.Context.beginPath();        
+        Buffer.Context.arc(mx, my, 46 + this.MediaAudio[2], 0, this.Constantes.TAU, false);
+        Buffer.Context.stroke();
+        
+        // Pinto la onda sinusoidal alrededor del circulo con la media total
+        Buffer.Context.beginPath();        
+        var ColT = 'rgb(' + Math.round(128 + this.MediaAudio[4]) + ',' + Math.round(255 - this.MediaAudio[4]) +  ', 0)';
+        Buffer.Context.strokeStyle = ColT;
+
+        var i = 0;
+        for (var i = 0; i < TamBuffer; i++) {
+            Valor = this.DatosAnalizadorSin[i] * 0.75;
+            var x = mx + (Math.cos(Angulo) * (90 + Valor));
+            var y = my + (Math.sin(Angulo) * (90 + Valor));
+            
+            Buffer.Context.lineTo(x, y);            
+            Angulo += Avance;
+        }
+        Valor = this.DatosAnalizadorSin[0] * 0.75;
+        Buffer.Context.lineTo(mx + (Math.cos(Tick) * (90 + Valor)), my + (Math.sin(Tick) * (90 + Valor)));            
+        Buffer.Context.closePath();
+        Buffer.Context.stroke();        
+        
+        // Descomentar para imprimir valores medios
+        Buffer.Context.font = "32px monospace";
+        Buffer.Context.fillStyle = "#000000";
+        Buffer.Context.fillText("G " + Math.round(this.MediaAudio[0]), 930, 35);    // Graves
+        Buffer.Context.fillText("M " + Math.round(this.MediaAudio[1]), 930, 65);    // Medios
+        Buffer.Context.fillText("A " + Math.round(this.MediaAudio[2]), 930, 95);    // Agudos
+        Buffer.Context.fillText("I " + Math.round(this.MediaAudio[3]), 930, 135);   // Inaudibles agudos
+        Buffer.Context.fillText("T " + Math.round(this.MediaAudio[4]), 930, 165);   // media Total
+        
+        Buffer.Context.fillStyle = ColG;
+        Buffer.Context.fillText("G " + Math.round(this.MediaAudio[0]), 928, 33);
+        Buffer.Context.fillStyle = ColM;
+        Buffer.Context.fillText("M " + Math.round(this.MediaAudio[1]), 928, 63);
+        Buffer.Context.fillStyle = ColA;
+        Buffer.Context.fillText("A " + Math.round(this.MediaAudio[2]), 928, 93);
+        Buffer.Context.fillStyle = "#ffffff";
+        Buffer.Context.fillText("I " + Math.round(this.MediaAudio[3]), 928, 133);
+        Buffer.Context.fillStyle = ColT;
+        Buffer.Context.fillText("T " + Math.round(this.MediaAudio[4]), 928, 163);
+        
+        Buffer.Textura.needsUpdate = true;
+    },
+    
+    // Pinta los datos del analizador dividido en 8 partes / circulos    
+    PintarPantalla_Circular8 : function(Buffer, Tick) {
+        Buffer.Context.fillStyle = "rgba(0, 0, 0, 0.5)";
+        var ColG = 'rgb(' + Math.round(120 + this.MediaAudio[0]) + ',' + Math.round(255 - this.MediaAudio[0]) +  ', 0)';
+        var ColT = 'rgb(' + Math.round(128 + this.MediaAudio[4]) + ',' + Math.round(255 - this.MediaAudio[4]) +  ', 0)';
+        var ColA = 'rgb(0, ' + Math.round(120 + this.MediaAudio[2]) + ',' + Math.round(128 - this.MediaAudio[2]) +  ')';
+        
+        var Cols = [ ColG, ColT, ColT, ColA, ColA, ColA, ColA, ColA ];
+
+        Buffer.Context.fillRect(0, 0, Buffer.Ancho, Buffer.Alto);
+
+        var TamBuffer = this.Audio.Analizador.fftSize / 2;
+        var Porcion = (TamBuffer / 8);
+        var RadAvance = (this.Constantes.TAU) / Porcion;
+        var Rad = -Math.PI / 2, x = 0, y = 0;
+        var i = 0;
+        for (var p = 0; p < 8; p++) {
+            Buffer.Context.strokeStyle = Cols[p];
+
+            Buffer.Context.beginPath();
+            var cx = (p > 3) ? (p -3) * 204 : (p + 1) * 204;
+            var cy = (p > 3) ? 356 : 164;
+            var Valor = this.DatosAnalizador[p * Porcion] / 3.5;
+            var ix = cx + (24 + (Valor)) * Math.cos(Rad);
+            var iy = cy + (24 + (Valor)) * Math.sin(Rad);
+            for (; i < (p + 1) * Porcion; i++) {
+                Valor = this.DatosAnalizador[i] / 3.5;
+                x = cx + (24 + (Valor)) * Math.cos(Rad);
+                y = cy + (24 + (Valor)) * Math.sin(Rad);
+                Buffer.Context.lineTo(x, y);
+                Rad += RadAvance;            
+            }
+            Buffer.Context.lineTo(ix, iy);
+            Buffer.Context.stroke();
+            
+        }
+        Buffer.Textura.needsUpdate = true;
+    },
+    
+    // Pinta un circulo utilizando los datos del analizador de forma que queda reflejado el lado derecho en el izquierdo
+    PintarPantalla_Circular : function(Buffer, Tick) { 
+        Buffer.Context.fillStyle = "rgba(0, 0, 0, 0.5)";
+        Buffer.Context.strokeStyle = 'rgb(' + Math.round(128 + this.MediaAudio[4]) + ',' + Math.round(255 - this.MediaAudio[4]) +  ', 0)';
+        Buffer.Context.fillRect(0, 0, Buffer.Ancho, Buffer.Alto);
+        var TamBuffer = this.Audio.Analizador.fftSize / 2;
+        var RadAvance = this.Constantes.TAU / this.Audio.Analizador.fftSize;
+        var Rad = -Math.PI / 2, x = 0, y = 0;       
+        var mx = (Buffer.Ancho / 2);
+        var my = (Buffer.Alto / 2);
+        var Valor = this.DatosAnalizador[0] / 1.5;
+        Buffer.Context.beginPath();        
+        var ix = mx + (130 + Valor) * Math.cos(Rad);
+        var iy = (my + 70) + (130 + Valor) * Math.sin(Rad);
+        Buffer.Context.moveTo(ix, iy);
+
+        for (var i = 0; i < TamBuffer; i++) {            
+            Valor = this.DatosAnalizador[i] / 1.5;
+            x = mx + (150 + Valor) * Math.cos(Rad);
+            y = (my + 70) + (130 + Valor) * Math.sin(Rad);
+            Buffer.Context.lineTo(x, y);
+            Rad += RadAvance;
+        }
+        
+        for (var i = TamBuffer; i > 0; i--) {
+            Valor = this.DatosAnalizador[i] / 1.5;
+            x = mx + (130 + Valor) * Math.cos(Rad);
+            y = (my + 70) + (130 + Valor) * Math.sin(Rad);
+            Buffer.Context.lineTo(x, y);
+            Rad += RadAvance;
+        }
+
+        Buffer.Context.lineTo(ix, iy);
+        Buffer.Context.stroke();
+        // Actualizo la textura
+        Buffer.Textura.needsUpdate = true;
+    },
+    
+    // Actualiza las transiciones para los objetos que pueden ser resaltados
+    ActualizarObjetoHover : function() {
+        if (this.MouseMovido === false) { return; }
+        
+        this.RayCaster.setFromCamera(this.PosMouse, this.Camara);
+
+        // Calculo los objetos que hacen intersección desde el punto de la camara al punto donde está el mouse
+        var intersects = this.RayCaster.intersectObjects( this.Escena.children, true );        
+
+        var HoverP  = false;        // Pantalla central
+        var HoverP2 = false;        // Pantalla derecha
+        var HoverP3 = false;        // Pantalla izquierda
+        var HoverC  = false;        // Panel de controles
+
+        var HoverCAtras    = false; // Botón Atras
+        var HoverCPlay     = false; // Botón Play / Pausa
+        var HoverCStop     = false; // Botón Stop
+        var HoverCAdelante = false; // Botón Adelante
+
+        var HoverBarraTiempo = false;
+        var HoverSliderTiempo = false;
+
+        var HoverDatosCancion = false; 
+
+        var HoverBarras    = false; // Barras del analizador de frequencias
+
+        for (var i = 0; i < intersects.length; i++ ) {
+//                console.log(intersects[i].point);
+            if (intersects[i].object === this.Pantalla)                { HoverP            = true; break; }
+            if (intersects[i].object === this.Pantalla2)               { HoverP2           = true; break; }                
+            if (intersects[i].object === this.Pantalla3)               { HoverP3           = true; break; }                
+            if (intersects[i].object === this.SueloAnalizador)         { HoverBarras       = true; break; }   
+            if (intersects[i].object.parent === this.BarrasAnalizador) { HoverBarras       = true; break; }   
+            if (intersects[i].object === this.Controles)               { HoverC            = true; } // El panel de controles tiene botones dentro..
+            if (intersects[i].object === this.C_Atras)                 { HoverCAtras       = true; }   
+            if (intersects[i].object === this.C_Play)                  { HoverCPlay        = true; }   
+            if (intersects[i].object === this.C_Adelante)              { HoverCAdelante    = true; }   
+            if (intersects[i].object === this.DatosCancion)            { HoverDatosCancion = true; }
+
+            if (intersects[i].object === this.C_BarraTiempo)           { 
+                HoverBarraTiempo  = true; 
+//                    console.log(intersects[i].point);
+                this.C_BarraTiempo.PosHover = intersects[i].point.x + (this.AnchoBarraTiempo / 2);
+            }   
+        }        
+
+        // Transiciones si hay un cambio de estado
+        if (this.BarrasAnalizador.Hover !== HoverBarras) {
+            this.BarrasAnalizador.Hover = HoverBarras;
+            this.BarrasAnalizador.Ani.Transicion();
+        }
+
+        if (this.Pantalla.Hover !== HoverP) {
+            this.Pantalla.Hover = HoverP;
+            this.Pantalla.Ani.Transicion();
+        }
+
+        if (this.Pantalla2.Hover !== HoverP2) {
+            this.Pantalla2.Hover = HoverP2;
+            this.Pantalla2.Ani.Transicion();
+        }
+
+        if (this.Pantalla3.Hover !== HoverP3) {
+            this.Pantalla3.Hover = HoverP3;
+            this.Pantalla3.Ani.Transicion();
+        }
+
+        if (this.Controles.Hover !== HoverC) {
+            this.Controles.Hover = HoverC;
+            this.Controles.Ani.Transicion();
+        }
+
+        if (this.C_Atras.Hover !== HoverCAtras) {
+            this.C_Atras.Hover = HoverCAtras;
+            if (this.C_Atras.Ani) { this.C_Atras.Ani.Transicion(); }
+        }
+
+        if (this.C_Play.Hover !== HoverCPlay) {
+            this.C_Play.Hover = HoverCPlay;
+            if (this.C_Play.Ani) { this.C_Play.Ani.Transicion(); }
+        }
+
+        if (this.C_Adelante.Hover !== HoverCAdelante) {
+            this.C_Adelante.Hover = HoverCAdelante;
+            if (this.C_Adelante.Ani) { this.C_Adelante.Ani.Transicion(); }
+        }
+
+        if (this.C_BarraTiempo.Hover !== HoverBarraTiempo) {
+            this.C_BarraTiempo.Hover = HoverBarraTiempo;
+        }
+
+        if (this.DatosCancion.Hover !== HoverDatosCancion) {
+            this.DatosCancion.Hover = HoverDatosCancion;
+            this.DatosCancion.Ani.Transicion();
+        }            
+
+        this.MouseMovido = false;        
+    },
+
+    // Función que pinta cada frame de la animación
+    Pintar          : function() {                  
+        this.ActualizarObjetoHover();
+        // Actualizo todas las animaciones en curso
+        this.Animaciones.Actualizar();        
+        // Obtengo los bufers con la frequencia y la onda
+        this.Audio.Analizador.getByteFrequencyData(this.DatosAnalizador);
+        this.Audio.Analizador.getByteTimeDomainData(this.DatosAnalizadorSin);
+        // Obtengo el valor medio dentro del buffer de frequencias
+        this.MediaAudio = this.MediaFrequenciasAudio();
+        // Actualizo las escalas de los cubos
+        this.ActualizarCubos();
+        // Tiempo de la canción
+        this.ActualizarTiempoSlider();
+        // Funciones que pintan las pantallas
+        this.FuncionesPintarPantalla[this.TipoPantalla](this.BufferPantalla, this.Tick);
+        this.FuncionesPintarPantalla[this.TipoPantalla2](this.BufferPantalla2, this.Tick + 6000);
+        this.FuncionesPintarPantalla[this.TipoPantalla3](this.BufferPantalla3, this.Tick + 12000);
+        
+        this.Context.render(this.Escena, this.Camara);  
+    }    
+});
+
+
+
+var EspectroAudible_Audio = function() {
+    this.AudioSourceDD = { context : { currentTime : 0 } };
+    this.Context = new AudioContext();
+    this.Iniciar = function(fftSize, Padre, FuncionCanPlay, FuncionEnded) {
+        this.Analizador = this.Context.createAnalyser();
+        this.Analizador.fftSize = fftSize;
+        this.Analizador.smoothingTimeConstant = 0.8; // 
+        this.FuncionCanPlay = FuncionCanPlay;
+        this.FuncionEnded = FuncionEnded;
+
+        this.Canciones =[            
+            { Grupo : "LevenRain",           Titulo : "ActionMan Versus The CyberParasites",   Año : "2016",    Path : "LevenRain_-_ActionMan_Versus_The_CyberParasites.mp3",   Web : "https://www.jamendo.com/track/1349290/actionman-versus-the-cyberparasites" },
+            { Grupo : "Fallen to Flux",      Titulo : "One Chance",                            Año : "2014",    Path : "OneChance.mp3",                                         Web : "https://www.jamendo.com/track/1155241/one-chance" },
+            { Grupo : "From Sky to Abyss",   Titulo : "Quantum Ocean",                         Año : "2016",    Path : "QuantumOcean.mp3",                                      Web : "https://www.jamendo.com/track/1284951/quantum-ocean" }, 
+            { Grupo : "In Camera",           Titulo : "Nothing's Over",                        Año : "2016",    Path : "In_Camera_-_Nothing_s_Over.mp3",                        Web : "https://www.jamendo.com/track/1397271/nothing-s-over" },
+            { Grupo : "Convergence",         Titulo : "Six Feet Under",                        Año : "2007",    Path : "Convergence_-_Six_feet_under.mp3",                      Web : "https://www.jamendo.com/track/80122/six-feet-under" },
+            { Grupo : "JT Bruce",            Titulo : "Battle Trance",                         Año : "2015",    Path : "BattleTrance.mp3",                                      Web : "https://www.jamendo.com/track/1237162/battle-trance" }
+        ];
+        this.Padre = Padre;
+        
+        Padre.Canvas.addEventListener("dragenter", function(e) { return false; });
+        Padre.Canvas.addEventListener("dragover",  function(e) { return e.preventDefault(); });
+        
+        Padre.Canvas.addEventListener("drop", function(e) {
+            this.CargarCancionDrop(e.dataTransfer.files);
+            e.stopPropagation();  
+            e.preventDefault();         
+        }.bind(this));        
+        
+        //return R;
+    };
+    
+    this.CargarCancion = function(PosCancion) {        
+        if (PosCancion === this.CancionActual && this.CancionCargada === true) {
+            return;
+        }
+        
+        this.Padre.Cargando(true);        
+        this.CancionCargada = false;
+        if (this.CancionActual !== -1) { if (this.Cancion) { this.Cancion.pause(); } }
+        else                           { this.AudioSourceDD.stop(0); }
+        this.CancionActual = PosCancion;
+        this.Cancion = new Audio();
+        this.Cancion.controls = true;
+        this.Cancion.crossOrigin = "anonymous";
+        this.Cancion.src = "/Ejemplos/BannerTest/Canciones/" + this.Canciones[PosCancion].Path;
+        this.Cancion.addEventListener('canplay', this.CanPlay.bind(this));        
+        this.Cancion.addEventListener('ended', function() { 
+            this.FuncionEnded();
+        }.bind(this) );        
+    };    
+    
+    
+    this.CanPlay = function() {
+        if (this.CancionCargada !== true) {
+            this.Padre.Cargando(false);
+            this.CancionCargada = true;
+            if (this.CancionActual !== -1) {
+                this.AudioSource = this.Context.createMediaElementSource(this.Cancion);
+                this.AudioSource.connect(this.Analizador);
+                this.Analizador.connect(this.Context.destination);
+                this.FuncionCanPlay();
+            }
+        }        
+    };
+    
+    // devuelve true si se ha hecho play, false si se ha hecho pausa
+    this.PlayPausa = function() {
+        if (this.CancionActual !== -1) {
+            // El autoplay en dispositivos moviles no funciona, por lo que hay que comprobar si está realmente en play o en pausa.
+            if (this.Cancion.duration > 0 && !this.Cancion.paused) { this.Cancion.pause();  return false;  } 
+            else                                                   { this.Cancion.play();   return true; }
+        }
+        else { // Drag & drop
+            return false;
+        }
+    };
+    
+    this.Adelante = function() {
+        if (this.CancionActual !== -1) {  this.Cancion.pause(); }
+        var p = 0;
+        (this.CancionActual + 1 < this.Canciones.length)    ? p = this.CancionActual + 1 :      p = 0;
+        this.CargarCancion(p);
+    };
+    
+    this.Atras = function(FuncionCanPlay, FuncionEnded) {
+        if (this.CancionActual !== -1) {  this.Cancion.pause(); }
+        var p = 0;
+        (this.CancionActual - 1 > -1)                       ? p = this.CancionActual - 1 :      p = this.Canciones.length - 1;
+        this.CargarCancion(p);        
+    };
+
+    this.NuevoTiempoActual = function(NuevoTiempo) {
+        if (this.CancionActual !== -1) { this.Cancion.currentTime = NuevoTiempo; }
+        else                           { this.AudioSourceDD.context.currentTime = NuevoTiempo; }        
+    };
+    
+    this.TiempoActual = function() {
+        if (this.CancionActual !== -1) { return this.Cancion.currentTime; }
+        else                           { return this.AudioSourceDD.context.currentTime; }
+    };
+    
+    this.TiempoTotal = function() {
+        if (this.CancionActual !== -1) { return this.Cancion.duration; }
+        else {
+            if (this.AudioSourceDD.buffer) { return this.AudioSourceDD.buffer.duration; }
+            else                         { return 0; }
+        }
+    };
+    
+    this.CargarCancionDrop = function(Archivos) {    
+        if (this.CancionCargada === false) { return; }
+        this.Padre.Cargando(true);
+        this.CancionCargada = false;
+        this.CancionActual = -1;
+        if (this.Cancion) { 
+            this.Cancion.pause(); 
+            this.Cancion.currentTime = 0;
+        }    
+        this.Cancion = { };
+        var Reader = new FileReader();
+        Reader.addEventListener('load', function(e) {
+            this.Context.decodeAudioData(e.target.result, function(Buffer) {
+                this.Padre.Cargando(false);
+                this.CancionCargada = true;
+                this.AudioSourceDD = this.Context.createBufferSource();
+                this.AudioSourceDD.buffer = Buffer;
+                this.AudioSourceDD.connect(this.Analizador);
+                this.Analizador.connect(this.Context.destination);
+                this.AudioSourceDD.start(0);                
+                this.FuncionCanPlay();
+            }.bind(this));
+        }.bind(this));
+        Reader.readAsArrayBuffer(Archivos[0]);
+    };
+};
+
+var Canvas = null;
+window.addEventListener('load', function() { Canvas = new EspectroAudible; });
+</script>
+    </head>
+    <body>
+        
+    </body>
+
+<!-- Mirrored from devildrey33.es/Lab/Ejemplos/BannerTest/EspectroAudible.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Aug 2022 11:44:08 GMT -->
+</html></textarea><iframe id="Lab_Preview" allowfullscreen="true"></iframe><div id='Lab_Barra1' class='SinSeleccion'><div id='Lab_BotonExplorador' title='Mostrar / Ocultar el explorador'></div></div><div id='Lab_Barra2'></div><div id='Lab_ParcheIframe'></div><div id='Lab_Actualizar'>Actualización en <span id='Lab_Actualizar_Tiempo'>5</span>s<br /><b>Esc</b> para cancelar<br /> <b>Alt+A</b> para actualizar</div></article><script>$Lab.Archivo = 'https://devildrey33.es/Lab/Ejemplos/BannerTest/Ejemplos/BannerTest/EspectroAudible.html';$Lab.ForzarVista = '4';$Lab.Modo = 'text/html';window.addEventListener('load', function() { $Lab.IniciarEjemplo('https://devildrey33.es/Lab/Ejemplos/BannerTest/Ejemplos/BannerTest/EspectroAudible.html'); });</script></div></body></html>
+
+
+
